@@ -60,6 +60,9 @@ Creating what comes next.
                   akipoheritageglobal@gmail.com
                 </a>
               </li>
+              <li className="text-premium-white/70">
+                No. 1, Opposite Islamic Cultural Center, Agbowo Area, Obamoro Road, Iwo, Osun State
+              </li>
             </ul>
           </div>
         </div>
