@@ -144,18 +144,18 @@ export default function AboutPage() {
             </div>
             <div>
               <h3 className="font-heading text-2xl">Founder & CEO</h3>
-              <p className="text-heritage-brown/50 text-sm mt-1">Details coming soon</p>
+              <p className="text-heritage-brown/70 text-base mt-1">Mr. Abdul Azeez Taiwo Adelani</p>
             </div>
           </div>
 
           {/* Leadership team */}
           <div className="grid sm:grid-cols-3 gap-8">
             {[
-              "Admin",
-              "Admin",
-              "Overall Manager",
-            ].map((role, i) => (
-              <div key={`${role}-${i}`} className="flex flex-col items-center text-center gap-4">
+              { role: "Admin", name: "Ms. Abdul Azeez Bushroh Itunu" },
+              { role: "Admin", name: "Mr. Abdul Azeez Fadhlullah Alabi" },
+              { role: "Overall Manager", name: "Mr. Abdul Afeez" },
+            ].map((person, i) => (
+              <div key={`${person.role}-${i}`} className="flex flex-col items-center text-center gap-4">
                 <div className="w-28 h-28 rounded-full bg-heritage-cream border border-heritage-brown/10 flex items-center justify-center">
                   <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-heritage-brown/30">
                     <circle cx="12" cy="8" r="4" />
@@ -163,8 +163,8 @@ export default function AboutPage() {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="font-heading text-lg">{role}</h3>
-                  <p className="text-heritage-brown/50 text-sm mt-1">Details coming soon</p>
+                  <h3 className="font-heading text-lg">{person.role}</h3>
+                  <p className="text-heritage-brown/70 text-sm mt-1">{person.name}</p>
                 </div>
               </div>
             ))}
