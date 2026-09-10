@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Intro() {
   return (
     <section className="bg-premium-white text-heritage-brown">
@@ -21,9 +23,12 @@ export default function Intro() {
             We bring different sectors together under one vision — while
             allowing each business to build its own expertise and identity.
           </p>
-          <button className="self-start text-sm font-medium border border-heritage-brown/30 rounded-full px-6 py-3 hover:bg-heritage-brown hover:text-premium-white transition-colors">
+          <Link
+            href="/about"
+            className="self-start text-sm font-medium border border-heritage-brown/30 rounded-full px-6 py-3 hover:bg-heritage-brown hover:text-premium-white transition-colors"
+          >
             Learn About Akipo Heritage →
-          </button>
+          </Link>
         </div>
       </div>
     </section>
