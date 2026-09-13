@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -19,9 +20,13 @@ export default function Navbar() {
     <>
       <header className="sticky top-0 z-50 bg-premium-white/90 backdrop-blur border-b border-heritage-brown/10">
         <nav className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          <Link href="/" className="font-heading text-xl tracking-wide text-heritage-brown">
+                <Link href="/" className="flex items-center gap-4">
+          <Image src="/images/akipo-icon.png" alt="Akipo Heritage" width={36} height={21} className="h-8 w-auto" />
+          <span className="h-6 w-px bg-heritage-brown/20" />
+          <span className="font-heading text-xl tracking-wide text-heritage-brown">
             AKIPO HERITAGE
-          </Link>
+          </span>
+        </Link>
 
           <ul className="hidden md:flex items-center gap-8 text-sm text-heritage-brown">
             {links.map((link) => (

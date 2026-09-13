@@ -70,7 +70,7 @@ export default function AboutPage() {
           <div className="relative border-l-2 border-champagne/30 pl-10 flex flex-col gap-16">
             {[
               { year: "1992", title: "Founded in Iwo", text: "Akipo Heritage began its journey in Iwo, laying the foundation for what would grow into a diversified business group." },
-               { year: "2015", title: "Expansion to Ikire & Beyond", text: "Operations expanded to Ikire and other states across Nigeria, broadening our reach and strengthening our commodities foundation." },
+                     { year: "2015", title: "Expansion Across Nigeria", text: "Operations expanded to other states across Nigeria, broadening our reach and strengthening our commodities foundation." },
               { year: "2025", title: "Akipo Heritage Travels & Tours", text: "We launched our travel division, beginning with Hajj and Umrah services for pilgrims." },
               { year: "2026", title: "Innovation & Technology", text: "We began building UniApp and Lansmart, our first ventures into technology-driven businesses." },
               { year: "Next", title: "Direct Exportation & Properties", text: "We're working toward direct commodity exportation and preparing to launch Akipo Heritage Properties." },

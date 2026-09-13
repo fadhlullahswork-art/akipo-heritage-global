@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -8,9 +9,13 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 py-16">
         <div className="grid md:grid-cols-5 gap-12">
           <div className="md:col-span-2">
-            <span className="font-heading text-2xl tracking-wide">
-              AKIPO HERITAGE
-            </span>
+            <Image
+              src="/images/akipo-logo-full.png"
+              alt="Akipo Heritage Global Limited"
+              width={200}
+              height={200}
+              className="w-40 h-auto"
+            />
             <p className="text-premium-white/70 mt-4 max-w-sm">
              Building with heritage.
 Creating what comes next.
