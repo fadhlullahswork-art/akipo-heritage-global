@@ -7,6 +7,7 @@ import { AnimatePresence, motion, type Variants } from "framer-motion";
 
 type Slide = {
   src: string;
+  pos: string;
   alt: string;
   eyebrow: string;
   title: string;
@@ -20,6 +21,7 @@ type Slide = {
 const slides: Slide[] = [
   {
     src: "/images/commodities-hero-1.jpg",
+    pos: "50% 70%",
     alt: "Akipo Heritage Global commodities warehouse and loading yard",
     eyebrow: "Welcome to",
     title: "Akipo Heritage Global.",
@@ -30,6 +32,7 @@ const slides: Slide[] = [
   },
   {
     src: "/images/commodities-hero-2.jpg",
+    pos: "55% 95%",
     alt: "Akipo Heritage Global warehouse under a wide Nigerian sky",
     eyebrow: "Commodities",
     title: "Cultivating Africa’s Finest Commodities with",
@@ -39,6 +42,7 @@ const slides: Slide[] = [
   },
   {
     src: "/images/commodities-hero-3.jpg",
+    pos: "25% 60%",
     alt: "Loading bay and trucks at the Akipo Heritage Global warehouse",
     eyebrow: "A little about us",
     title: "Rooted in Iwo.",
@@ -48,6 +52,7 @@ const slides: Slide[] = [
   },
   {
     src: "/images/travel-hero-1.jpg",
+    pos: "50% 85%",
     alt: "Akipo Heritage Global office building with company signage",
     eyebrow: "Travels & Tours · Just launched",
     title: "Your sacred journey,",
@@ -57,6 +62,7 @@ const slides: Slide[] = [
   },
   {
     src: "/images/travel-hero-2.jpg",
+    pos: "40% 70%",
     alt: "Akipo Heritage Global travel and tours office",
     eyebrow: "What’s next",
     title: "The world is",
@@ -111,7 +117,8 @@ export default function Hero() {
             fill
             priority={index === 0}
             sizes="100vw"
-            className="object-cover"
+            style={{ "--pos": slide.pos } as React.CSSProperties}
+            className="hero-img object-cover"
           />
         </motion.div>
       </AnimatePresence>
@@ -124,6 +131,8 @@ export default function Hero() {
             "linear-gradient(to top, rgba(30,20,10,0.9) 0%, rgba(30,20,10,0.5) 50%, rgba(30,20,10,0.25) 100%)",
         }}
       />
+
+      <div className="absolute inset-0 bg-heritage-brown/30 md:hidden" />
 
       {/* Content */}
       <div className="relative z-10 h-full max-w-7xl mx-auto px-6 flex flex-col justify-center items-start text-left md:justify-end py-10 md:pb-24">
