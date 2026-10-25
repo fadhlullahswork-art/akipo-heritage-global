@@ -28,30 +28,8 @@ const businesses = [
     image: "/images/travel.jpg",
     alt: "Masjid al-Haram in Makkah, representing Akipo Heritage's Hajj and Umrah travel services",
   },
-  {
-    number: "03",
-    category: "Properties",
-    name: "Akipo Heritage Properties",
-    description:
-      "Creating opportunities through property development, real estate investment, and carefully considered spaces designed for long-term value.",
-    note: "Future Developments — Coming Soon",
-    cta: "Explore Properties →",
-    href: "/businesses/properties",
-    image: "/images/properties.jpg",
-    alt: "Modern African architecture, representing Akipo Heritage's property development business",
-  },
-  {
-    number: "04",
-    category: "Innovation & Technology",
-    name: "Akipo Heritage Innovation & Technology",
-    description:
-      "Building digital products, technology solutions and innovative ventures that solve real problems and create new possibilities for businesses and communities.",
-    note: null,
-    cta: "Explore Innovation →",
-    href: "/businesses/innovation",
-    image: "/images/innovation.jpg",
-    alt: "Dark, technology-focused imagery representing Akipo Heritage's innovation division",
-  },
+ 
+  
 ];
 
 export default function Businesses() {
@@ -65,7 +43,7 @@ export default function Businesses() {
         </Reveal>
         <Reveal delay={0.15}>
           <p className="text-heritage-brown/80 text-lg mt-4 max-w-xl">
-            Diverse industries. One heritage. A shared ambition to build
+            Two businesses. One heritage. A shared ambition to build
             businesses that matter.
           </p>
         </Reveal>

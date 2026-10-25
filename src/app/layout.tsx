@@ -4,6 +4,7 @@ import "./globals.css";
 
 const playfair = Playfair_Display({
   variable: "--font-heading",
+  style: ["normal", "italic"],
   subsets: ["latin"],
 });
 
@@ -13,8 +14,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Akipo Heritage Global Ltd.",
-  description: "A diversified business group building enduring ventures across travel, commodities, properties, and technology.",
+  title: "Akipo Heritage Global Ltd. | Cocoa, Cashew, Palm Kernel & Hajj and Umrah Travel in Nigeria",
+  description: "Akipo Heritage Global Ltd. is a Nigerian company based in Iwo, Osun State, dealing in cocoa, cashew and palm kernel, with a certified travel and tours agency for Hajj and Umrah.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

@@ -12,7 +12,6 @@ export default function Navbar() {
     { label: "About", href: "/about" },
     { label: "Our Businesses", href: "/#businesses" },
     { label: "Our Approach", href: "/#approach" },
-    { label: "Innovation", href: "/businesses/innovation" },
     { label: "Contact", href: "/#contact" },
   ];
 

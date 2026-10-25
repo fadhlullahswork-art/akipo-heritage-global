@@ -43,7 +43,7 @@ const slides: Slide[] = [
     eyebrow: "A little about us",
     title: "Rooted in Iwo.",
     accent: "Growing across Nigeria.",
-    text: "Our journey began in Iwo, Osun State, in 1992. Today we are a diversified group across commodities, travel, properties and technology.",
+    text: "Our journey began in Iwo, Osun State, in 1992. Today we are a growing group built on commodities, with a new Travels & Tours agency.",
     cta: { label: "Learn About Us →", href: "/about" },
   },
   {
@@ -91,7 +91,7 @@ export default function Hero() {
   const slide = slides[index];
 
   return (
-    <section className="relative h-screen min-h-[600px] w-full overflow-hidden bg-heritage-brown">
+    <section className="relative h-[calc(100svh-4.1rem)] min-h-[560px] w-full overflow-hidden bg-heritage-brown">
       {/* Slideshow with slow zoom */}
       <AnimatePresence>
         <motion.div
@@ -126,18 +126,19 @@ export default function Hero() {
       />
 
       {/* Content */}
-      <div className="relative z-10 h-full max-w-7xl mx-auto px-6 flex flex-col justify-end pb-16 md:pb-24">
+      <div className="relative z-10 h-full max-w-7xl mx-auto px-6 flex flex-col justify-center items-center text-center md:items-start md:text-left md:justify-end py-10 md:pb-24">
         <AnimatePresence mode="wait">
           <motion.div
             key={index}
             variants={container}
+            className="flex flex-col items-center md:items-start"
             initial="hidden"
             animate="show"
             exit="exit"
           >
             <motion.p
               variants={item}
-              className="text-sm md:text-base uppercase tracking-[0.25em] text-champagne mb-5"
+              className="text-xs md:text-base uppercase tracking-[0.2em] text-champagne mb-4 md:mb-5"
             >
               {slide.eyebrow}
             </motion.p>
@@ -163,7 +164,7 @@ export default function Hero() {
             </motion.p>
 
             {slide.tags && (
-              <motion.div variants={item} className="flex flex-wrap gap-2 mt-6">
+              <motion.div variants={item} className="flex flex-wrap justify-center md:justify-start gap-2 mt-6">
                 {slide.tags.map((tag) => (
                   <span
                     key={tag}
@@ -186,7 +187,7 @@ export default function Hero() {
 
             <motion.div
               variants={item}
-              className="flex flex-col sm:flex-row sm:items-center gap-4 pt-8"
+              className="flex flex-col sm:flex-row items-center gap-4 pt-8"
             >
               {slide.cta.href.startsWith("#") ? (
                 <a

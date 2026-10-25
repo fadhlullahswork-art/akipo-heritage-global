@@ -45,8 +45,8 @@ export default function AboutPage() {
           <p className="text-heritage-brown/80 text-lg">
             We bring different sectors together under one vision — while
             allowing each business to build its own expertise and identity.
-            Today, that means ventures across travel, commodities,
-            properties, and technology, each operated with the same
+            Today, that means commodities and travel,
+            each operated with the same
             standard of care and the same long-term outlook.
           </p>
           <p className="text-heritage-brown/80 text-lg">
@@ -72,8 +72,8 @@ export default function AboutPage() {
               { year: "1992", title: "Founded in Iwo", text: "Akipo Heritage began its journey in Iwo, laying the foundation for what would grow into a diversified business group." },
                      { year: "2015", title: "Expansion Across Nigeria", text: "Operations expanded to other states across Nigeria, broadening our reach and strengthening our commodities foundation." },
               { year: "2025", title: "Akipo Heritage Travels & Tours", text: "We launched our travel division, beginning with Hajj and Umrah services for pilgrims." },
-              { year: "2026", title: "Innovation & Technology", text: "We began building UniApp and Lansmart, our first ventures into technology-driven businesses." },
-              { year: "Next", title: "Direct Exportation & Properties", text: "We're working toward direct commodity exportation and preparing to launch Akipo Heritage Properties." },
+             
+              { year: "Next", title: "Direct Exportation", text: "We're working toward exporting our commodities directly to international markets." },
             ].map((item) => (
               <div key={item.title} className="relative">
                 <span className="absolute -left-[3.1rem] top-1 w-4 h-4 rounded-full bg-champagne border-4 border-premium-white" />

@@ -46,8 +46,8 @@ export default function Footer() {
               <ul className="flex flex-col gap-3 text-premium-white/80 text-sm">
                 <li><Link href="/businesses/travel-tourism" className="hover:text-champagne transition-colors">Travel &amp; Tourism</Link></li>
                 <li><Link href="/businesses/commodities" className="hover:text-champagne transition-colors">Commodities</Link></li>
-                <li><Link href="/businesses/properties" className="hover:text-champagne transition-colors">Properties</Link></li>
-                <li><Link href="/businesses/innovation" className="hover:text-champagne transition-colors">Innovation &amp; Technology</Link></li>
+
+                
               </ul>
             </div>
 
