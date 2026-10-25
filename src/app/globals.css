@@ -26,3 +26,12 @@ body {
   background: var(--premium-white);
   color: var(--heritage-brown);
 }
+.hero-img {
+  object-position: var(--pos, center);
+}
+
+@media (min-width: 768px) {
+  .hero-img {
+    object-position: center;
+  }
+}
