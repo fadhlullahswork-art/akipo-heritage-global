@@ -126,12 +126,12 @@ export default function Hero() {
       />
 
       {/* Content */}
-      <div className="relative z-10 h-full max-w-7xl mx-auto px-6 flex flex-col justify-center items-center text-center md:items-start md:text-left md:justify-end py-10 md:pb-24">
+      <div className="relative z-10 h-full max-w-7xl mx-auto px-6 flex flex-col justify-center items-start text-left md:justify-end py-10 md:pb-24">
         <AnimatePresence mode="wait">
           <motion.div
             key={index}
             variants={container}
-            className="flex flex-col items-center md:items-start"
+            className="flex flex-col items-start"
             initial="hidden"
             animate="show"
             exit="exit"
@@ -164,7 +164,7 @@ export default function Hero() {
             </motion.p>
 
             {slide.tags && (
-              <motion.div variants={item} className="flex flex-wrap justify-center md:justify-start gap-2 mt-6">
+              <motion.div variants={item} className="flex flex-wrap justify-start gap-2 mt-6">
                 {slide.tags.map((tag) => (
                   <span
                     key={tag}
@@ -187,7 +187,7 @@ export default function Hero() {
 
             <motion.div
               variants={item}
-              className="flex flex-col sm:flex-row items-center gap-4 pt-8"
+              className="flex flex-col items-start sm:flex-row sm:items-center gap-4 pt-8"
             >
               {slide.cta.href.startsWith("#") ? (
                 <a
