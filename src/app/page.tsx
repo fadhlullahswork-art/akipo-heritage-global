@@ -8,26 +8,43 @@ import GlobalVision from "@/components/GlobalVision";
 import ComingSoon from "@/components/ComingSoon";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import Reveal from "@/components/Reveal";
+import ScrollProgress from "@/components/ScrollProgress";
 
 export default function Home() {
   return (
     <>
+      <ScrollProgress />
       <Navbar />
       <Hero />
       <div id="about">
-        <Intro />
+        <Reveal>
+          <Intro />
+        </Reveal>
       </div>
       <div id="businesses">
-        <Businesses />
+        <Reveal>
+          <Businesses />
+        </Reveal>
       </div>
       <div id="approach">
-        <Approach />
+        <Reveal>
+          <Approach />
+        </Reveal>
       </div>
-      <HeritageFuture />
-      <GlobalVision />
-      <ComingSoon />
+      <Reveal>
+        <HeritageFuture />
+      </Reveal>
+      <Reveal>
+        <GlobalVision />
+      </Reveal>
+      <Reveal>
+        <ComingSoon />
+      </Reveal>
       <div id="contact">
-        <Contact />
+        <Reveal>
+          <Contact />
+        </Reveal>
       </div>
       <Footer />
     </>
