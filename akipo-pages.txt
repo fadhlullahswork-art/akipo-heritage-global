@@ -1,0 +1,1097 @@
+﻿
+===== src\app\page.tsx =====
+
+import Navbar from "@/components/Navbar";
+import Hero from "@/components/Hero";
+import Intro from "@/components/Intro";
+import Businesses from "@/components/Businesses";
+import Approach from "@/components/Approach";
+import HeritageFuture from "@/components/HeritageFuture";
+import GlobalVision from "@/components/GlobalVision";
+import ComingSoon from "@/components/ComingSoon";
+import Contact from "@/components/Contact";
+import Footer from "@/components/Footer";
+import Reveal from "@/components/Reveal";
+import ScrollProgress from "@/components/ScrollProgress";
+
+export default function Home() {
+  return (
+    <>
+      <ScrollProgress />
+      <Navbar />
+      <Hero />
+      <div id="about">
+        <Reveal>
+          <Intro />
+        </Reveal>
+      </div>
+      <div id="businesses">
+        <Reveal>
+          <Businesses />
+        </Reveal>
+      </div>
+      <div id="approach">
+        <Reveal>
+          <Approach />
+        </Reveal>
+      </div>
+      <Reveal>
+        <HeritageFuture />
+      </Reveal>
+      <Reveal>
+        <GlobalVision />
+      </Reveal>
+      <Reveal>
+        <ComingSoon />
+      </Reveal>
+      <div id="contact">
+        <Reveal>
+          <Contact />
+        </Reveal>
+      </div>
+      <Footer />
+    </>
+  );
+}
+
+===== src\app\about\page.tsx =====
+
+import Image from "next/image";
+import Link from "next/link";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+
+const principles = [
+  { number: "01", title: "Purpose", text: "We build businesses around meaningful opportunities and real-world needs." },
+  { number: "02", title: "Excellence", text: "We pursue high standards in how we serve customers, develop products and operate our businesses." },
+  { number: "03", title: "Long-Term Thinking", text: "We focus on creating businesses and assets capable of generating lasting value." },
+  { number: "04", title: "Innovation", text: "We continuously explore better ways to serve people, improve operations and create new opportunities." },
+];
+
+export default function AboutPage() {
+  return (
+    <>
+      <Navbar />
+
+      <section className="relative h-[65vh] min-h-[450px] w-full overflow-hidden">
+              <Image
+          src="/images/about-hero.jpg"
+          alt="A Nigerian street scene, representing Akipo Heritage's roots and journey"
+          fill
+          priority
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-heritage-brown/60" />
+
+        <div className="relative z-10 h-full max-w-7xl mx-auto px-6 flex flex-col justify-end pb-16 md:pb-20">
+          <span className="text-xs tracking-widest uppercase text-champagne font-medium">
+            About
+          </span>
+          <h1 className="font-heading text-4xl md:text-6xl leading-tight text-premium-white max-w-2xl mt-4">
+            One group. Multiple possibilities. A shared vision.
+          </h1>
+        </div>
+      </section>
+
+      <section className="bg-premium-white text-heritage-brown">
+        <div className="max-w-4xl mx-auto px-6 py-20 md:py-28 flex flex-col gap-6">
+          <p className="text-xl md:text-2xl font-heading leading-snug">
+            Akipo Heritage Global Ltd. is a diversified Nigerian business
+            group developing businesses designed to create lasting value
+            across industries and communities.
+          </p>
+          <p className="text-heritage-brown/80 text-lg">
+            We bring different sectors together under one vision â€” while
+            allowing each business to build its own expertise and identity.
+            Today, that means ventures across travel, commodities,
+            properties, and technology, each operated with the same
+            standard of care and the same long-term outlook.
+          </p>
+          <p className="text-heritage-brown/80 text-lg">
+            We believe the strongest businesses are built with a clear sense
+            of where they come from and an equally clear vision of where
+            they are going â€” our heritage gives us roots, and our ambition
+            gives us direction.
+          </p>
+        </div>
+      </section>
+
+      <section className="bg-premium-white text-heritage-brown">
+        <div className="max-w-4xl mx-auto px-6 py-20 md:py-28">
+          <span className="text-xs tracking-widest uppercase text-champagne font-medium">
+            Our History
+          </span>
+          <h2 className="font-heading text-3xl md:text-4xl mt-4 mb-16 max-w-xl">
+            A journey of steady growth.
+          </h2>
+
+          <div className="relative border-l-2 border-champagne/30 pl-10 flex flex-col gap-16">
+            {[
+              { year: "1992", title: "Founded in Iwo", text: "Akipo Heritage began its journey in Iwo, laying the foundation for what would grow into a diversified business group." },
+                     { year: "2015", title: "Expansion Across Nigeria", text: "Operations expanded to other states across Nigeria, broadening our reach and strengthening our commodities foundation." },
+              { year: "2025", title: "Akipo Heritage Travels & Tours", text: "We launched our travel division, beginning with Hajj and Umrah services for pilgrims." },
+              { year: "2026", title: "Innovation & Technology", text: "We began building UniApp and Lansmart, our first ventures into technology-driven businesses." },
+              { year: "Next", title: "Direct Exportation & Properties", text: "We're working toward direct commodity exportation and preparing to launch Akipo Heritage Properties." },
+            ].map((item) => (
+              <div key={item.title} className="relative">
+                <span className="absolute -left-[3.1rem] top-1 w-4 h-4 rounded-full bg-champagne border-4 border-premium-white" />
+                <span className="font-heading text-2xl text-champagne">{item.year}</span>
+                <h3 className="font-heading text-xl mt-1 mb-2">{item.title}</h3>
+                <p className="text-heritage-brown/75">{item.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-heritage-cream text-heritage-brown">
+        <div className="max-w-7xl mx-auto px-6 py-20 md:py-28">
+          <h2 className="font-heading text-3xl md:text-4xl mb-16 max-w-xl">
+            Built for today. Designed for tomorrow.
+          </h2>
+
+          <div className="grid md:grid-cols-2 gap-x-12 gap-y-12">
+            {principles.map((p) => (
+              <div key={p.number} className="flex gap-6 border-t border-heritage-brown/10 pt-6">
+                <span className="font-heading text-3xl text-champagne">{p.number}</span>
+                <div>
+                  <h3 className="font-heading text-xl mb-2">{p.title}</h3>
+                  <p className="text-heritage-brown/80">{p.text}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-heritage-brown text-premium-white">
+        <div className="max-w-4xl mx-auto px-6 py-20 md:py-28 text-center flex flex-col items-center gap-6">
+          <h2 className="font-heading text-3xl md:text-5xl leading-tight">
+            From Nigeria, with a global outlook.
+          </h2>
+          <p className="text-premium-white/80 text-lg max-w-2xl">
+            We&apos;re proudly building from Nigeria while looking beyond
+            borders â€” developing businesses that can participate
+            meaningfully in regional and international markets.
+          </p>
+          <Link
+            href="/#businesses"
+            className="mt-2 inline-block w-fit bg-premium-white text-heritage-brown rounded-full px-6 py-3 text-sm font-medium hover:bg-heritage-cream transition-colors"
+          >
+            Explore Our Businesses â†’
+          </Link>
+        </div>
+      </section>
+
+      <section className="bg-premium-white text-heritage-brown">
+        <div className="max-w-7xl mx-auto px-6 py-20 md:py-28">
+          <span className="text-xs tracking-widest uppercase text-champagne font-medium">
+            Our Team
+          </span>
+          <h2 className="font-heading text-3xl md:text-4xl mt-4 mb-16 max-w-xl">
+            The people behind Akipo Heritage.
+          </h2>
+
+          {/* Founder & CEO â€” own row */}
+          <div className="flex flex-col items-center text-center gap-4 mb-20">
+            <div className="w-44 h-44 rounded-full bg-heritage-cream border border-heritage-brown/10 flex items-center justify-center">
+              <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-heritage-brown/30">
+                <circle cx="12" cy="8" r="4" />
+                <path d="M4 20c0-4 4-6 8-6s8 2 8 6" />
+              </svg>
+            </div>
+            <div>
+              <h3 className="font-heading text-2xl">Founder & CEO</h3>
+              <p className="text-heritage-brown/70 text-base mt-1">Mr. Abdul Azeez Taiwo Adelani</p>
+            </div>
+          </div>
+
+          {/* Leadership team */}
+          <div className="grid sm:grid-cols-3 gap-8">
+            {[
+              { role: "Admin", name: "Ms. Abdul Azeez Bushroh Itunu" },
+              { role: "Admin", name: "Mr. Abdul Azeez Fadhlullah Alabi" },
+              { role: "Overall Manager", name: "Mr. Abdul Afeez" },
+            ].map((person, i) => (
+              <div key={`${person.role}-${i}`} className="flex flex-col items-center text-center gap-4">
+                <div className="w-28 h-28 rounded-full bg-heritage-cream border border-heritage-brown/10 flex items-center justify-center">
+                  <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-heritage-brown/30">
+                    <circle cx="12" cy="8" r="4" />
+                    <path d="M4 20c0-4 4-6 8-6s8 2 8 6" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="font-heading text-lg">{person.role}</h3>
+                  <p className="text-heritage-brown/70 text-sm mt-1">{person.name}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <Footer />
+    </>
+  );
+}
+
+===== src\app\businesses\commodities\page.tsx =====
+
+import Image from "next/image";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+
+export default function CommoditiesPage() {
+  return (
+    <>
+      <Navbar />
+
+      <section className="relative h-[70vh] min-h-[500px] w-full overflow-hidden">
+        <Image
+          src="/images/commodities.jpg"
+          alt="Cocoa pods, representing Akipo Heritage Commodities"
+          fill
+          priority
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-heritage-brown/55" />
+
+        <div className="relative z-10 h-full max-w-7xl mx-auto px-6 flex flex-col justify-end pb-16 md:pb-20">
+          <span className="text-xs tracking-widest uppercase text-champagne font-medium">
+            Commodities
+          </span>
+          <h1 className="font-heading text-4xl md:text-6xl leading-tight text-premium-white max-w-2xl mt-4">
+            Akipo Heritage Commodities
+          </h1>
+        </div>
+      </section>
+
+      <section className="bg-premium-white text-heritage-brown">
+        <div className="max-w-4xl mx-auto px-6 py-20 md:py-28">
+          <p className="text-xl md:text-2xl font-heading leading-snug">
+            Building trusted connections across agricultural and commodity
+            markets â€” sourcing, moving, and developing high-value
+            commodities with integrity at every stage.
+          </p>
+        </div>
+      </section>
+
+      <section className="bg-heritage-cream text-heritage-brown">
+        <div className="max-w-7xl mx-auto px-6 py-20 md:py-28">
+          <h2 className="font-heading text-3xl md:text-4xl mb-12">
+            Our Focus
+          </h2>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                name: "Cocoa",
+                image: "/images/commodities.jpg",
+                detail: "Sourced from trusted farming communities and prepared for both local and international markets.",
+              },
+              {
+                name: "Cashew",
+                image: "/images/cashew.jpg",
+                detail: "Handled with care from harvest through processing, meeting the standards global buyers expect.",
+              },
+              {
+                name: "Palm Kernel",
+                image: "/images/palm-kernel.jpg",
+                detail: "A key input across food, cosmetics and industrial supply chains, sourced responsibly.",
+              },
+            ].map((item) => (
+              <div
+                key={item.name}
+                className="bg-premium-white rounded-2xl overflow-hidden border border-heritage-brown/10"
+              >
+                <div className="relative w-full aspect-[4/3]">
+                  <Image src={item.image} alt={item.name} fill className="object-cover" />
+                </div>
+                <div className="p-6">
+                  <h3 className="font-heading text-2xl">{item.name}</h3>
+                  <p className="text-heritage-brown/70 mt-2 text-sm">{item.detail}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="relative h-[80vh] min-h-[550px] w-full overflow-hidden">
+        <Image
+          src="/images/export.jpg"
+          alt="Cargo ship at port, representing Akipo Heritage's move toward direct commodity exportation"
+          fill
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-heritage-brown/60" />
+
+        <div className="relative z-10 h-full max-w-7xl mx-auto px-6 flex flex-col justify-end pb-16 md:pb-20">
+          <span className="text-xs tracking-widest uppercase text-champagne font-medium">
+            What&apos;s Next
+          </span>
+          <h2 className="font-heading text-3xl md:text-5xl leading-tight text-premium-white max-w-2xl mt-4">
+            Direct exportation is our next big step.
+          </h2>
+          <p className="text-premium-white/85 text-lg max-w-2xl mt-4">
+            We are working toward exporting our commodities directly to
+            international markets â€” strengthening the connection between
+            Nigerian producers and buyers around the world.
+          </p>
+        </div>
+      </section>
+
+      <Footer />
+    </>
+  );
+}
+
+===== src\app\businesses\innovation\page.tsx =====
+
+import Image from "next/image";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+
+export default function InnovationPage() {
+  return (
+    <>
+      <Navbar />
+
+      <section className="relative h-[75vh] min-h-[550px] w-full overflow-hidden bg-black">
+        <Image
+          src="/images/innovation.jpg"
+          alt="Dark, technology-focused imagery representing Akipo Heritage Innovation & Technology"
+          fill
+          priority
+          className="object-cover opacity-60"
+        />
+        <div className="absolute inset-0 bg-black/60" />
+
+        <div className="relative z-10 h-full max-w-7xl mx-auto px-6 flex flex-col justify-end pb-16 md:pb-20">
+          <span className="text-xs tracking-widest uppercase text-champagne font-medium">
+            Innovation & Technology
+          </span>
+          <h1 className="font-heading text-4xl md:text-6xl leading-tight text-premium-white max-w-2xl mt-4">
+            Building digital solutions for the opportunities of tomorrow.
+          </h1>
+          <p className="text-premium-white/75 text-lg max-w-xl mt-4">
+            We build technology ventures aimed at solving real, everyday
+            problems for people in Nigeria and across Africa.
+          </p>
+        </div>
+      </section>
+
+      {/* UniApp */}
+      <section className="bg-black text-premium-white">
+        <div className="max-w-6xl mx-auto px-6 py-20 md:py-28">
+          <span className="inline-block text-xs font-medium bg-premium-white/10 text-champagne rounded-full px-4 py-1.5 mb-6">
+            In Development
+          </span>
+          <h2 className="font-heading text-3xl md:text-5xl leading-tight">
+            UniApp
+          </h2>
+          <p className="font-heading text-xl md:text-2xl text-champagne mt-4">
+            University life, focused.
+          </p>
+          <p className="text-premium-white/80 text-lg mt-6 max-w-2xl">
+            A focused digital environment built around your university, your
+            courses, your classmates and your academic journey â€” designed
+            around a simple philosophy: less noise, more focus.
+          </p>
+
+          {/* Feature grid */}
+          <div className="grid md:grid-cols-3 gap-8 mt-16">
+            {[
+              { title: "Coursemate Chat", text: "Talk with classmates and coursemates in one focused space." },
+              { title: "School Announcements", text: "University, faculty, department and course updates â€” targeted to you." },
+              { title: "Course Spaces", text: "Discussions and resources organized around each course you're taking." },
+              { title: "Class Board", text: "Timetables, tests, exams, assignments and deadlines, always in view." },
+              { title: "AI Study Agent", text: "Summaries, flashcards and practice questions generated from your own course materials." },
+              { title: "Academic Resources", text: "Lecture notes, past questions and materials, organized by course." },
+            ].map((f) => (
+              <div key={f.title} className="border-t border-premium-white/15 pt-6">
+                <h3 className="font-heading text-xl mb-2">{f.title}</h3>
+                <p className="text-premium-white/65 text-sm">{f.text}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* Flow */}
+          <div className="flex flex-wrap items-center justify-center gap-3 mt-16 text-sm font-medium text-premium-white/70">
+            {["Connect", "Learn", "Organize", "Prepare", "Succeed"].map((step, i, arr) => (
+              <div key={step} className="flex items-center gap-3">
+                <span className="bg-premium-white/10 rounded-full px-4 py-2">{step}</span>
+                {i < arr.length - 1 && <span className="text-champagne">â†’</span>}
+              </div>
+            ))}
+          </div>
+
+          <p className="text-center font-heading text-xl md:text-2xl text-premium-white mt-16">
+            Less distraction. More focus. Better university life.
+          </p>
+        </div>
+      </section>
+
+      {/* Lansmart */}
+      <section className="bg-heritage-brown text-premium-white">
+        <div className="max-w-6xl mx-auto px-6 py-20 md:py-28">
+          <span className="inline-block text-xs font-medium bg-premium-white/10 text-champagne rounded-full px-4 py-1.5 mb-6">
+            In Development
+          </span>
+          <h2 className="font-heading text-3xl md:text-5xl leading-tight">
+            Lansmart
+          </h2>
+          <p className="font-heading text-xl md:text-2xl text-champagne mt-4">
+            Commerce, discovery and opportunity â€” reimagined.
+          </p>
+          <p className="text-premium-white/80 text-lg mt-6 max-w-2xl">
+            Lansmart is a modern digital marketplace designed to bring
+            products, services, businesses and opportunities together in one
+            engaging environment. Beyond simply browsing listings, users will
+            be able to discover products through immersive content, connect
+            directly with sellers, communicate through chat, and transact
+            with greater confidence through escrow-protected transactions.
+          </p>
+
+          {/* Phone mockups */}
+          <div className="grid md:grid-cols-3 gap-6 mt-16">
+            {[
+              { label: "Discover", desc: "Product videos & social-style feed" },
+              { label: "Product Page", desc: "Photos, price, verified seller" },
+              { label: "Seller Chat", desc: "Message sellers directly" },
+            ].map((phone) => (
+              <div key={phone.label} className="flex flex-col items-center gap-4">
+                <div className="w-full max-w-[220px] aspect-[9/18] rounded-[2rem] border-4 border-premium-white/20 bg-black/40 flex flex-col overflow-hidden">
+                  <div className="flex-1 flex items-center justify-center p-6 text-center">
+                    <span className="text-premium-white/50 text-sm">
+                      {phone.desc}
+                    </span>
+                  </div>
+                </div>
+                <span className="text-sm font-medium text-champagne">
+                  {phone.label}
+                </span>
+              </div>
+            ))}
+          </div>
+
+          {/* Flow */}
+          <div className="flex flex-wrap items-center justify-center gap-3 mt-16 text-sm font-medium text-premium-white/70">
+            {["Discover", "Chat", "Purchase", "Escrow", "Receive"].map((step, i, arr) => (
+              <div key={step} className="flex items-center gap-3">
+                <span className="bg-premium-white/10 rounded-full px-4 py-2">{step}</span>
+                {i < arr.length - 1 && <span className="text-champagne">â†’</span>}
+              </div>
+            ))}
+          </div>
+
+          <p className="text-center font-heading text-xl md:text-2xl text-premium-white mt-16">
+            More than a marketplace. A new way to discover, connect and
+            transact.
+          </p>
+
+          {/* Feature grid */}
+          <div className="grid md:grid-cols-3 gap-8 mt-20">
+            {[
+              { title: "Discover", text: "Explore products and businesses through a dynamic, social-style discovery experience." },
+              { title: "Shop", text: "Browse products and services from businesses and independent sellers in one marketplace." },
+              { title: "Connect", text: "Chat directly with sellers, ask questions, and build trust before making a purchase." },
+              { title: "Watch", text: "Discover products through video and visual content, not just static listings." },
+              { title: "Trust", text: "Designed to provide escrow-protected transactions for a safer buyerâ€“seller experience." },
+              { title: "Opportunities", text: "Beyond products, Lansmart brings together Services and Jobs on one platform." },
+            ].map((f) => (
+              <div key={f.title} className="border-t border-premium-white/15 pt-6">
+                <h3 className="font-heading text-xl mb-2">{f.title}</h3>
+                <p className="text-premium-white/65 text-sm">{f.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* More ventures coming */}
+      <section className="bg-black text-premium-white">
+        <div className="max-w-4xl mx-auto px-6 py-20 md:py-28 text-center flex flex-col items-center gap-4">
+          <span className="text-xs tracking-widest uppercase text-champagne font-medium">
+            What&apos;s Next
+          </span>
+          <h2 className="font-heading text-3xl md:text-4xl">
+            More ventures coming.
+          </h2>
+          <p className="text-premium-white/70 text-lg max-w-xl">
+            Our innovation portfolio will continue to evolve as we develop
+            new ideas and technology-driven businesses for Nigeria and
+            Africa.
+          </p>
+        </div>
+      </section>
+
+      <Footer />
+    </>
+  );
+}
+
+===== src\app\businesses\properties\page.tsx =====
+
+import Image from "next/image";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+
+export default function PropertiesPage() {
+  return (
+    <>
+      <Navbar />
+
+      <section className="relative h-screen min-h-[600px] w-full overflow-hidden">
+        <Image
+          src="/images/properties.jpg"
+          alt="Modern African architecture, representing Akipo Heritage Properties"
+          fill
+          priority
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-heritage-brown/65" />
+
+        <div className="relative z-10 h-full max-w-7xl mx-auto px-6 flex flex-col items-center justify-center text-center gap-6">
+          <span className="text-xs tracking-widest uppercase text-champagne font-medium">
+            Properties
+          </span>
+          <h1 className="font-heading text-4xl md:text-6xl leading-tight text-premium-white max-w-2xl">
+            Akipo Heritage Properties
+          </h1>
+          <p className="text-premium-white/85 text-lg max-w-xl">
+            Creating opportunities through property development, real estate
+            investment, and carefully considered spaces designed for
+            long-term value.
+          </p>
+          <span className="mt-4 inline-block text-sm font-medium bg-premium-white/15 text-premium-white rounded-full px-5 py-2">
+            Coming Soon
+          </span>
+        </div>
+      </section>
+
+      <Footer />
+    </>
+  );
+}
+
+===== src\app\businesses\travel-tourism\page.tsx =====
+
+import Image from "next/image";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+
+export default function TravelTourismPage() {
+  return (
+    <>
+      <Navbar />
+
+      <section className="relative h-[70vh] min-h-[500px] w-full overflow-hidden">
+        <Image
+          src="/images/travel.jpg"
+          alt="Masjid al-Haram in Makkah, representing Akipo Heritage's Hajj and Umrah travel services"
+          fill
+          priority
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-heritage-brown/55" />
+
+        <div className="relative z-10 h-full max-w-7xl mx-auto px-6 flex flex-col justify-end pb-16 md:pb-20">
+          <span className="text-xs tracking-widest uppercase text-champagne font-medium">
+            Travel & Tourism
+          </span>
+          <h1 className="font-heading text-4xl md:text-6xl leading-tight text-premium-white max-w-2xl mt-4">
+            Akipo Heritage Int&apos;l Travels & Tours Ltd.
+          </h1>
+        </div>
+      </section>
+
+      <section className="bg-premium-white text-heritage-brown">
+        <div className="max-w-4xl mx-auto px-6 py-20 md:py-28">
+          <p className="text-xl md:text-2xl font-heading leading-snug">
+            Connecting people with meaningful journeys through carefully
+            curated travel experiences â€” beginning with sacred journeys to
+            the Holy Land.
+          </p>
+        </div>
+      </section>
+
+      <section className="bg-heritage-cream text-heritage-brown">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="h-px bg-champagne/40 w-24 mb-12" />
+        </div>
+        <div className="max-w-7xl mx-auto px-6 pb-20 md:pb-28 grid md:grid-cols-2 gap-12 items-center">
+          <div className="flex flex-col gap-4">
+            <span className="text-xs tracking-widest uppercase text-champagne font-medium">
+              Available Now
+            </span>
+            <h2 className="font-heading text-3xl md:text-4xl">
+              Hajj & Umrah Services
+            </h2>
+            <p className="text-heritage-brown/80 text-lg">
+              Our dedicated Hajj and Umrah travel service handles every
+              detail of your sacred journey with care, offering trusted
+              packages and support from start to finish.
+                       </p>
+            
+            <a  href="https://akipo-heritage-site.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-2 inline-block w-fit bg-champagne text-heritage-brown rounded-full px-6 py-3 text-sm font-medium hover:bg-champagne/80 transition-colors"
+            >
+              Visit Hajj & Umrah Site â†’
+            </a>
+          </div>
+
+          <div className="relative w-full aspect-[4/5] rounded-3xl overflow-hidden border-2 border-champagne">
+            <Image
+              src="/images/travel.jpg"
+              alt="Masjid al-Haram in Makkah"
+              fill
+              className="object-cover"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-heritage-brown text-premium-white">
+        <div className="max-w-4xl mx-auto px-6 py-20 md:py-28 flex flex-col gap-6">
+          <span className="text-xs tracking-widest uppercase text-champagne font-medium">
+            What&apos;s Next
+          </span>
+          <h2 className="font-heading text-3xl md:text-5xl leading-tight">
+            International Travels â€” Coming Soon.
+          </h2>
+          <p className="text-premium-white/80 text-lg max-w-2xl">
+            We&apos;re expanding beyond Hajj and Umrah to offer broader
+            international travel packages and destination experiences.
+            Stay tuned as we grow this side of the business.
+          </p>
+        </div>
+      </section>
+
+      <Footer />
+    </>
+  );
+}
+
+===== src\components\Approach.tsx =====
+
+const principles = [
+  {
+    number: "01",
+    title: "Purpose",
+    text: "We build businesses around meaningful opportunities and real-world needs.",
+  },
+  {
+    number: "02",
+    title: "Excellence",
+    text: "We pursue high standards in how we serve customers, develop products and operate our businesses.",
+  },
+  {
+    number: "03",
+    title: "Long-Term Thinking",
+    text: "We focus on creating businesses and assets capable of generating lasting value.",
+  },
+  {
+    number: "04",
+    title: "Innovation",
+    text: "We continuously explore better ways to serve people, improve operations and create new opportunities.",
+  },
+];
+
+export default function Approach() {
+  return (
+    <section className="bg-premium-white text-heritage-brown">
+      <div className="max-w-7xl mx-auto px-6 py-24 md:py-32">
+        <h2 className="font-heading text-4xl md:text-5xl leading-tight max-w-2xl mb-16">
+          Built for today. Designed for tomorrow.
+        </h2>
+
+        <div className="grid md:grid-cols-2 gap-x-12 gap-y-12">
+          {principles.map((p) => (
+            <div key={p.number} className="flex gap-6 border-t border-heritage-brown/10 pt-6">
+              <span className="font-heading text-3xl text-champagne">
+                {p.number}
+              </span>
+              <div>
+                <h3 className="font-heading text-xl mb-2">{p.title}</h3>
+                <p className="text-heritage-brown/80">{p.text}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+===== src\components\Businesses.tsx =====
+
+import Image from "next/image";
+import Link from "next/link";
+
+const businesses = [
+  {
+    number: "01",
+    category: "Commodities",
+    name: "Akipo Heritage Commodities",
+    description:
+      "Building trusted connections across agricultural and commodity markets by facilitating the sourcing, movement and development of high-value commodities: Cocoa, Cashew, and Palm Kernel.",
+    note: null,
+    cta: "Explore Commodities â†’",
+    href: "/businesses/commodities",
+    image: "/images/commodities.jpg",
+    alt: "Cocoa pods, representing Akipo Heritage's agricultural commodities business",
+  },
+  {
+    number: "02",
+    category: "Travel & Tourism",
+    name: "Akipo Heritage Int'l Travels & Tours Ltd.",
+    description:
+      "Connecting people with meaningful journeys through carefully curated travel experiences, Hajj and Umrah services, and international travel solutions.",
+    note: "International Travels â€” Coming Soon",
+    cta: "Explore Travel & Tourism â†’",
+    href: "/businesses/travel-tourism",
+    image: "/images/travel.jpg",
+    alt: "Masjid al-Haram in Makkah, representing Akipo Heritage's Hajj and Umrah travel services",
+  },
+  {
+    number: "03",
+    category: "Properties",
+    name: "Akipo Heritage Properties",
+    description:
+      "Creating opportunities through property development, real estate investment, and carefully considered spaces designed for long-term value.",
+    note: "Future Developments â€” Coming Soon",
+    cta: "Explore Properties â†’",
+    href: "/businesses/properties",
+    image: "/images/properties.jpg",
+    alt: "Modern African architecture, representing Akipo Heritage's property development business",
+  },
+  {
+    number: "04",
+    category: "Innovation & Technology",
+    name: "Akipo Heritage Innovation & Technology",
+    description:
+      "Building digital products, technology solutions and innovative ventures that solve real problems and create new possibilities for businesses and communities.",
+    note: null,
+    cta: "Explore Innovation â†’",
+    href: "/businesses/innovation",
+    image: "/images/innovation.jpg",
+    alt: "Dark, technology-focused imagery representing Akipo Heritage's innovation division",
+  },
+];
+
+export default function Businesses() {
+  return (
+    <section className="bg-premium-white text-heritage-brown">
+      <div className="max-w-7xl mx-auto px-6 pt-24 md:pt-32 pb-16 md:pb-20">
+        <h2 className="font-heading text-4xl md:text-5xl leading-tight max-w-2xl">
+          Our Businesses
+        </h2>
+        <p className="text-heritage-brown/80 text-lg mt-4 max-w-xl">
+          Diverse industries. One heritage. A shared ambition to build
+          businesses that matter.
+        </p>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-6 flex flex-col gap-24 md:gap-32 pb-24 md:pb-32">
+        {businesses.map((b, i) => (
+          <div
+            key={b.number}
+            className={`grid md:grid-cols-2 gap-8 md:gap-16 items-center ${
+              i % 2 === 1 ? "md:[direction:rtl]" : ""
+            }`}
+          >
+            <div
+              className={`relative w-full aspect-[4/5] md:aspect-[4/5] rounded-3xl overflow-hidden ${
+                i % 2 === 1 ? "md:[direction:ltr]" : ""
+              }`}
+            >
+              <Image src={b.image} alt={b.alt} fill className="object-cover" />
+            </div>
+
+            <div
+              className={`flex flex-col gap-4 ${i % 2 === 1 ? "md:[direction:ltr]" : ""}`}
+            >
+              <span className="text-xs tracking-widest uppercase text-champagne font-medium">
+                {b.number} â€” {b.category}
+              </span>
+              <h3 className="font-heading text-3xl md:text-4xl">{b.name}</h3>
+              <p className="text-heritage-brown/80 text-lg">{b.description}</p>
+              {b.note && (
+                <span className="inline-block w-fit text-xs font-medium bg-cocoa-brown/10 text-cocoa-brown rounded-full px-3 py-1">
+                  {b.note}
+                </span>
+              )}
+              <Link
+                href={b.href}
+                target={b.href.startsWith("http") ? "_blank" : undefined}
+                rel={b.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                className="text-sm font-medium text-heritage-brown underline underline-offset-4 mt-2 w-fit"
+              >
+                {b.cta}
+              </Link>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+===== src\components\ComingSoon.tsx =====
+
+export default function ComingSoon() {
+  return (
+    <section className="bg-premium-white text-heritage-brown">
+      <div className="max-w-7xl mx-auto px-6 py-24 md:py-32 flex flex-col items-center text-center gap-8">
+        <span className="text-xs tracking-widest uppercase text-champagne font-medium">
+          What&apos;s Next
+        </span>
+
+        <h2 className="font-heading text-4xl md:text-6xl leading-tight">
+          New markets.
+          <br />
+          New ventures.
+          <br />
+          New possibilities.
+        </h2>
+
+        <p className="text-heritage-brown/80 text-lg max-w-xl">
+          We&apos;re expanding our international travel services, including
+          Hajj and Umrah journeys, to new destinations.
+        </p>
+
+        <div className="flex gap-4">
+          <span className="text-sm font-medium bg-cocoa-brown/10 text-cocoa-brown rounded-full px-4 py-2">
+            International Travels â€” Coming Soon
+          </span>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+===== src\components\Contact.tsx =====
+
+export default function Contact() {
+  return (
+    <section className="bg-heritage-brown text-premium-white">
+      <div className="max-w-7xl mx-auto px-6 py-24 md:py-32 flex flex-col items-center text-center gap-8">
+        <h2 className="font-heading text-4xl md:text-6xl leading-tight max-w-2xl">
+          Let&apos;s build what comes next.
+        </h2>
+
+        <p className="text-premium-white/80 text-lg max-w-xl">
+          Whether you&apos;re looking to work with one of our businesses,
+          explore an opportunity, or connect with the Akipo Heritage Group,
+          we&apos;d be glad to hear from you.
+        </p>
+
+        <div className="flex flex-col sm:flex-row gap-4">
+          
+          <a  href="#businesses"
+            className="bg-premium-white text-heritage-brown rounded-full px-6 py-3 text-sm font-medium hover:bg-heritage-cream transition-colors"
+          >
+            Explore Our Businesses â†’
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+===== src\components\GlobalVision.tsx =====
+
+import Image from "next/image";
+
+export default function GlobalVision() {
+  return (
+    <section className="bg-heritage-cream text-heritage-brown">
+      <div className="max-w-7xl mx-auto px-6 py-24 md:py-32 flex flex-col items-center text-center gap-6">
+        <h2 className="font-heading text-3xl md:text-5xl leading-tight max-w-3xl">
+          From Nigeria, with a global outlook.
+        </h2>
+
+        <p className="text-heritage-brown/80 text-lg max-w-2xl">
+          Akipo Heritage Global Ltd. is proudly building from Nigeria while
+          looking beyond borders. Our ambition is to develop businesses that
+          can participate meaningfully in regional and international
+          markets.
+        </p>
+
+        <div className="relative mt-6 w-full max-w-3xl aspect-[4/5] md:aspect-[16/10] rounded-2xl overflow-hidden">
+          <Image
+            src="/images/global-vision.jpg"
+            alt="Aerial view of an Africa-shaped monument, representing Akipo Heritage's African roots and global ambition"
+            fill
+            className="object-cover"
+          />
+        </div>
+      </div>
+    </section>
+  );
+}
+
+===== src\components\HeritageFuture.tsx =====
+
+export default function HeritageFuture() {
+  return (
+    <section className="bg-heritage-brown text-premium-white">
+      <div className="max-w-7xl mx-auto px-6 py-24 md:py-32 grid md:grid-cols-2 gap-12 items-center">
+        <h2 className="font-heading text-3xl md:text-5xl leading-tight">
+          Our heritage gives us roots.
+          <br />
+          Our ambition gives us direction.
+        </h2>
+
+        <p className="text-premium-white/80 text-lg max-w-md">
+          We believe the strongest businesses are built with a clear sense of
+          where they come from and an equally clear vision of where they are
+          going.
+        </p>
+      </div>
+    </section>
+  );
+}
+
+===== src\components\Intro.tsx =====
+
+import Link from "next/link";
+
+export default function Intro() {
+  return (
+    <section className="bg-premium-white text-heritage-brown">
+      <div className="max-w-7xl mx-auto px-6 py-24 md:py-32 grid md:grid-cols-2 gap-12 md:gap-20">
+        <div>
+          <span className="text-xs tracking-widest uppercase text-champagne font-medium">
+            Who We Are
+          </span>
+          <h2 className="font-heading text-3xl md:text-5xl leading-tight mt-4">
+            One group. Multiple possibilities. A shared vision.
+          </h2>
+        </div>
+
+        <div className="flex flex-col gap-6 justify-center">
+          <p className="text-heritage-brown/80 text-lg">
+            Akipo Heritage Global Ltd. is a diversified Nigerian business
+            group developing businesses designed to create lasting value
+            across industries and communities.
+          </p>
+          <p className="text-heritage-brown/80 text-lg">
+            We bring different sectors together under one vision â€” while
+            allowing each business to build its own expertise and identity.
+          </p>
+          <Link
+            href="/about"
+            className="self-start text-sm font-medium border border-heritage-brown/30 rounded-full px-6 py-3 hover:bg-heritage-brown hover:text-premium-white transition-colors"
+          >
+            Learn About Akipo Heritage â†’
+          </Link>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+===== src\components\Navbar.tsx =====
+
+"use client";
+
+import { useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
+
+export default function Navbar() {
+  const [open, setOpen] = useState(false);
+
+  const links = [
+    { label: "Home", href: "/" },
+    { label: "About", href: "/about" },
+    { label: "Our Businesses", href: "/#businesses" },
+    { label: "Our Approach", href: "/#approach" },
+    { label: "Innovation", href: "/businesses/innovation" },
+    { label: "Contact", href: "/#contact" },
+  ];
+
+  return (
+    <>
+      <header className="sticky top-0 z-50 bg-premium-white/90 backdrop-blur border-b border-heritage-brown/10">
+        <nav className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+                <Link href="/" className="flex items-center gap-4">
+          <Image src="/images/akipo-icon.png" alt="Akipo Heritage" width={36} height={21} className="h-8 w-auto" />
+          <span className="h-6 w-px bg-heritage-brown/20" />
+          <span className="font-heading text-xl tracking-wide text-heritage-brown">
+            AKIPO HERITAGE
+          </span>
+        </Link>
+
+          <ul className="hidden md:flex items-center gap-8 text-sm text-heritage-brown">
+            {links.map((link) => (
+              <li key={link.label}>
+                <a href={link.href}>{link.label}</a>
+              </li>
+            ))}
+          </ul>
+
+          <Link
+            href="/#businesses"
+            className="hidden md:inline-block text-sm font-medium text-heritage-brown border border-heritage-brown/30 rounded-full px-5 py-2 hover:bg-heritage-brown hover:text-premium-white transition-colors"
+          >
+            Explore Akipo â†’
+          </Link>
+
+          <button
+            onClick={() => setOpen(true)}
+            className="md:hidden text-heritage-brown"
+            aria-label="Open menu"
+          >
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <line x1="3" y1="6" x2="21" y2="6" />
+              <line x1="3" y1="12" x2="21" y2="12" />
+              <line x1="3" y1="18" x2="21" y2="18" />
+            </svg>
+          </button>
+        </nav>
+      </header>
+
+      <div
+        onClick={() => setOpen(false)}
+        className={`md:hidden fixed inset-0 z-40 bg-heritage-brown/40 transition-opacity duration-300 ${
+          open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+        }`}
+      />
+
+      <div
+        className={`md:hidden fixed top-0 right-0 z-50 h-full w-[80%] max-w-sm bg-heritage-brown text-premium-white flex flex-col transition-transform duration-300 ease-in-out ${
+          open ? "translate-x-0" : "translate-x-full"
+        }`}
+      >
+        <div className="flex items-center justify-between px-6 py-4 border-b border-premium-white/10">
+          <span className="font-heading text-lg tracking-wide">AKIPO HERITAGE</span>
+          <button onClick={() => setOpen(false)} aria-label="Close menu">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <line x1="6" y1="6" x2="18" y2="18" />
+              <line x1="6" y1="18" x2="18" y2="6" />
+            </svg>
+          </button>
+        </div>
+
+        <ul className="flex-1 flex flex-col gap-2 px-6 py-8">
+          {links.map((link) => (
+            <li key={link.label} className="border-b border-premium-white/10">
+              
+               <a href={link.href}
+                onClick={() => setOpen(false)}
+                className="block py-4 font-heading text-xl"
+              >
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </>
+  );
+}

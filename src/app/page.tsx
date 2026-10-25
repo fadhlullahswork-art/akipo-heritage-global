@@ -8,7 +8,6 @@ import GlobalVision from "@/components/GlobalVision";
 import ComingSoon from "@/components/ComingSoon";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
-import Reveal from "@/components/Reveal";
 import ScrollProgress from "@/components/ScrollProgress";
 
 export default function Home() {
@@ -18,33 +17,19 @@ export default function Home() {
       <Navbar />
       <Hero />
       <div id="about">
-        <Reveal>
-          <Intro />
-        </Reveal>
+        <Intro />
       </div>
       <div id="businesses">
-        <Reveal>
-          <Businesses />
-        </Reveal>
+        <Businesses />
       </div>
       <div id="approach">
-        <Reveal>
-          <Approach />
-        </Reveal>
+        <Approach />
       </div>
-      <Reveal>
-        <HeritageFuture />
-      </Reveal>
-      <Reveal>
-        <GlobalVision />
-      </Reveal>
-      <Reveal>
-        <ComingSoon />
-      </Reveal>
+      <HeritageFuture />
+      <GlobalVision />
+      <ComingSoon />
       <div id="contact">
-        <Reveal>
-          <Contact />
-        </Reveal>
+        <Contact />
       </div>
       <Footer />
     </>

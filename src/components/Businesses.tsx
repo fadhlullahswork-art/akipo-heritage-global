@@ -1,5 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
+import Reveal from "@/components/Reveal";
+import { RevealGroup, RevealItem } from "@/components/RevealGroup";
 
 const businesses = [
   {
@@ -56,55 +58,77 @@ export default function Businesses() {
   return (
     <section className="bg-premium-white text-heritage-brown">
       <div className="max-w-7xl mx-auto px-6 pt-24 md:pt-32 pb-16 md:pb-20">
-        <h2 className="font-heading text-4xl md:text-5xl leading-tight max-w-2xl">
-          Our Businesses
-        </h2>
-        <p className="text-heritage-brown/80 text-lg mt-4 max-w-xl">
-          Diverse industries. One heritage. A shared ambition to build
-          businesses that matter.
-        </p>
+        <Reveal>
+          <h2 className="font-heading text-4xl md:text-5xl leading-tight max-w-2xl">
+            Our Businesses
+          </h2>
+        </Reveal>
+        <Reveal delay={0.15}>
+          <p className="text-heritage-brown/80 text-lg mt-4 max-w-xl">
+            Diverse industries. One heritage. A shared ambition to build
+            businesses that matter.
+          </p>
+        </Reveal>
       </div>
 
       <div className="max-w-7xl mx-auto px-6 flex flex-col gap-24 md:gap-32 pb-24 md:pb-32">
-        {businesses.map((b, i) => (
-          <div
-            key={b.number}
-            className={`grid md:grid-cols-2 gap-8 md:gap-16 items-center ${
-              i % 2 === 1 ? "md:[direction:rtl]" : ""
-            }`}
-          >
+        {businesses.map((b, i) => {
+          const flip = i % 2 === 1;
+          return (
             <div
-              className={`relative w-full aspect-[4/5] md:aspect-[4/5] rounded-3xl overflow-hidden ${
-                i % 2 === 1 ? "md:[direction:ltr]" : ""
+              key={b.number}
+              className={`grid md:grid-cols-2 gap-8 md:gap-16 items-center ${
+                flip ? "md:[direction:rtl]" : ""
               }`}
             >
-              <Image src={b.image} alt={b.alt} fill className="object-cover" />
-            </div>
-
-            <div
-              className={`flex flex-col gap-4 ${i % 2 === 1 ? "md:[direction:ltr]" : ""}`}
-            >
-              <span className="text-xs tracking-widest uppercase text-champagne font-medium">
-                {b.number} — {b.category}
-              </span>
-              <h3 className="font-heading text-3xl md:text-4xl">{b.name}</h3>
-              <p className="text-heritage-brown/80 text-lg">{b.description}</p>
-              {b.note && (
-                <span className="inline-block w-fit text-xs font-medium bg-cocoa-brown/10 text-cocoa-brown rounded-full px-3 py-1">
-                  {b.note}
-                </span>
-              )}
-              <Link
-                href={b.href}
-                target={b.href.startsWith("http") ? "_blank" : undefined}
-                rel={b.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                className="text-sm font-medium text-heritage-brown underline underline-offset-4 mt-2 w-fit"
+              <Reveal
+                direction={flip ? "right" : "left"}
+                className={`relative w-full aspect-[4/5] rounded-3xl overflow-hidden ${
+                  flip ? "md:[direction:ltr]" : ""
+                }`}
               >
-                {b.cta}
-              </Link>
+                <Image
+                  src={b.image}
+                  alt={b.alt}
+                  fill
+                  sizes="(min-width: 768px) 50vw, 100vw"
+                  className="object-cover"
+                />
+              </Reveal>
+
+              <RevealGroup
+                className={`flex flex-col gap-4 ${flip ? "md:[direction:ltr]" : ""}`}
+              >
+                <RevealItem>
+                  <span className="text-xs tracking-widest uppercase text-champagne font-medium">
+                    {b.number} — {b.category}
+                  </span>
+                </RevealItem>
+                <RevealItem>
+                  <h3 className="font-heading text-3xl md:text-4xl">{b.name}</h3>
+                </RevealItem>
+                <RevealItem>
+                  <p className="text-heritage-brown/80 text-lg">{b.description}</p>
+                </RevealItem>
+                {b.note && (
+                  <RevealItem>
+                    <span className="inline-block w-fit text-xs font-medium bg-cocoa-brown/10 text-cocoa-brown rounded-full px-3 py-1">
+                      {b.note}
+                    </span>
+                  </RevealItem>
+                )}
+                <RevealItem className="mt-2">
+                  <Link
+                    href={b.href}
+                    className="inline-block text-sm font-medium text-heritage-brown underline underline-offset-4"
+                  >
+                    {b.cta}
+                  </Link>
+                </RevealItem>
+              </RevealGroup>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </section>
   );
